@@ -1,0 +1,90 @@
+<form [formGroup]="paymentform"  >
+    <div class="container">
+
+  <h1 style="text-align:center">PAYMENT</h1>
+  <br><br>
+
+    <div class="form-group">
+    <div style="text-align:center">
+    <input  type="number" ng-model="policynumber"  placeholder=" Enter your policy number" class="form-control" formControlName="policynumber">
+    
+    <div *ngIf="!paymentform.get('policynumber')?.valid && (paymentform.get('policynumber')?.dirty|| paymentform.get('policynumber')?.touched)" 
+    class="error">
+        <div *ngIf="paymentform.get('policynumber')?.errors?.['required']">
+            <small class="text-danger">Enter the policy number</small>
+        </div>
+    </div>
+</div>
+</div>
+<br><br>
+
+<div class="form-group">
+    <label for="paymentmode"><b>Choose your Mode of Payment</b></label>
+    <select name="paymentmode" id="paymentmode" formControlName="paymentmode">
+      
+      <option value="cash">Cash</option>
+      <option value="card">Card</option>
+      <option value="netbanking">Netbanking</option>
+    </select>
+</div>
+<br><br>
+
+
+  <div class="form-group">
+    <div style="text-align:center">
+    <input  type="text" ng-model="bank" placeholder=" Enter your Bank Name" class="form-control" formControlName="bank">
+    <div *ngIf="!paymentform.get('bank')?.valid && (paymentform.get('bank')?.dirty|| paymentform.get('bank')?.touched)" 
+    class="error">
+        <div *ngIf="paymentform.get('bank')?.errors?.['required']">
+            <small class="text-danger">Enter your bank name</small>
+        </div>
+</div>
+</div>
+</div>
+<br><br>
+
+
+  <div class="form-group">
+    <div style="text-align:center">
+    <input  type="date" ng-model="dateofpayment" placeholder=" Enter date of payment" class="form-control" formControlName="dateofpayment">
+    <div *ngIf="!paymentform.get('dateofpayment')?.valid && (paymentform.get('dateofpayment')?.dirty|| paymentform.get('dateofpayment')?.touched)" 
+    class="error">
+        <div *ngIf="paymentform.get('dateofpayment')?.errors?.['required']">
+            <small class="text-danger">Enter date of payment</small>
+        </div>
+</div>
+</div>
+</div>
+<br><br>
+
+
+<div class="form-group">
+    <div style="text-align:center">
+    <input  type="text" ng-model="amount" placeholder=" Total amount" class="form-control" formControlName="amount">
+    <div *ngIf="!paymentform.get('amount')?.valid && (paymentform.get('amount')?.dirty|| paymentform.get('amount')?.touched)" 
+    class="error">
+        <div *ngIf="paymentform.get('amount')?.errors?.['required']">
+            <small class="text-danger">Enter the amount</small>
+        </div>
+</div>
+</div>
+</div>
+<br><br>
+
+
+  
+
+
+
+  <div class="form-group">
+  <div style="text-align:center">
+  <button class="btn-primary" (click)="addpayment()">Make Payment</button>
+</div>
+</div>
+<br><br>
+  
+</div>
+
+
+</form>
+

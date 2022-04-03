@@ -1,0 +1,24 @@
+<h1>Insurance Claims</h1>
+<table style="width: 100%;" class="table-bordered" >
+    <thead>
+      <tr>
+        <th>Sl.No.</th>
+        <th>Policy Number</th>
+        <!--<th>Contact Number</th>-->
+        <th>Reason</th>
+        <th>Action</th>
+      </tr>
+      <br>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of arry; index as i">
+        <td>{{i+1}}</td>
+        <td>{{x.policyNumber}}</td>
+        <!--<td>{{x.ContactNo}}</td>-->
+        <td>{{x.reason}}</td>
+        <td><button class="btn-primary" (click)="Approve()">Approve</button>&nbsp;<button class="btn-primary1">Disprove</button></td>
+      </tr>
+    </tbody>
+
+
+  </table>

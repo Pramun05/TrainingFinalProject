@@ -1,0 +1,155 @@
+<div class="container">
+    <form [formGroup]="insuranceform" >
+    
+      <h1 style="text-align:center">BUY INSURANCE</h1>
+    
+    
+    
+      <div  action="#">
+        <label for="VehicleType">Vechile Type</label>
+        <select name="Vechile Type" id="vechile" formControlName="VehicleType">
+          <option value="Vechile type" >Select Vechile Type</option>
+          <option value="2 Wheeler">2 Wheeler</option>
+          <option value="4 Wheeler">4 Wheeler</option>
+        </select>
+    </div>
+    <br>
+    
+     
+    
+    
+    
+        <div class="form-group">
+        <div style="text-align:center">
+          <label for="manufacturer">Manufacturer</label><br><br>
+        <input  type="text" ng-model="manufacturer"  placeholder=" Enter car/bike manufacturer" class="form-control" formControlName="manufacturer">
+        
+        <div *ngIf="!insuranceform.get('manufacturer')?.valid && (insuranceform.get('manufacturer')?.dirty|| insuranceform.get('manufacturer')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('manufacturer')?.errors?.['required']">
+                <small class="text-danger">Enter the Manufracturer</small>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+    
+    <div class="form-group">
+        <div style="text-align:center">
+          <label for="model">Model</label><br><br>
+        <input type="text"  ng-model="model" placeholder=" Enter car/bike model" class="form-control" formControlName="model">
+        <div *ngIf="!insuranceform.get('model')?.valid && (insuranceform.get('model')?.dirty|| insuranceform.get('model')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('model')?.errors?.['required']">
+                <small class="text-danger">Enter the Model</small>
+            </div>
+          </div>
+    </div>
+      <br>
+    
+    
+      <div class="form-group">
+        <div style="text-align:center">
+          <label for="drivinglicence">Driving Licence</label>
+        <input  type="text" ng-model="drivinglicence" placeholder=" Enter driving licence" class="form-control" formControlName="drivinglicence">
+        <div *ngIf="!insuranceform.get('drivinglicence')?.valid && (insuranceform.get('drivinglicence')?.dirty|| insuranceform.get('drivinglicence')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('drivinglicence')?.errors?.['required']">
+                <small class="text-danger">Enter driving licence</small>
+            </div>
+    </div>
+    </div>
+      <br>
+    
+    
+      <div class="form-group">
+        <div style="text-align:center">
+          <label for="purchasedate">Purchase Date</label>
+        <input  type="date" ng-model="purchasedate" placeholder=" Enter purchase date" class="form-control" formControlName="purchasedate">
+        <div *ngIf="!insuranceform.get('purchasedate')?.valid && (insuranceform.get('purchasedate')?.dirty|| insuranceform.get('purchasedate')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('purchasedate')?.errors?.['required']">
+                <small class="text-danger">Enter purchase date</small>
+            </div>
+    </div>
+    </div>
+      <br>
+    
+    
+      <div class="form-group">
+        <div style="text-align:center">
+          <label for="registrationnumber">Registration number</label>
+        <input  type="text" ng-model="registrationnumber" placeholder=" Enter Registration number" class="form-control" formControlName="registrationnumber">
+        <div *ngIf="!insuranceform.get('registrationnumber')?.valid && (insuranceform.get('registrationnumber')?.dirty|| insuranceform.get('registrationnumber')?.touched)" 
+        class="error">
+        <div *ngIf="!insuranceform.get('registrationnumber')?.errors?.['pattern']">Enter valid Registration Number</div>
+                <small class="text-danger">Enter the Registration number</small>
+            </div>
+    </div>
+    </div>
+      <br>
+    
+    
+      <div class="form-group">
+        <div style="text-align:center">
+          <label for="enginenumber">Engine Number</label><br><br>
+        <input  type="text" ng-model="enginenumber" placeholder=" Enter Engine number" class="form-control" formControlName="enginenumber">
+        <div *ngIf="!insuranceform.get('enginenumber')?.valid && (insuranceform.get('enginenumber')?.dirty|| insuranceform.get('enginenumber')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('enginenumber')?.errors?.['required']">
+                <small class="text-danger">Enter the Engine number</small>
+            </div>
+    </div>
+    </div>
+      <br>
+    
+      
+      <div class="form-group">
+        <div style="text-align:center">
+          <label for="chassisnumber">Chassis Number</label><br><br>
+        <input  type="text" ng-model="chassisnumber" placeholder=" Enter Chassis number" class="form-control" formControlName="chassisnumber">
+      <div *ngIf="!insuranceform.get('chassisnumber')?.valid && (insuranceform.get('chassisnumber')?.dirty|| insuranceform.get('chassisnumber')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('chassisnumber')?.errors?.['required']">
+                <small class="text-danger">Enter the Chassis number</small>
+            </div>
+      </div>
+    </div>
+      <br>
+      
+      
+      
+      
+      <div class="form-group">
+        <div style="text-align:center">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" class="form-control" formControlName="email"> 
+        
+    
+        <div *ngIf="!insuranceform.get('email')?.valid && (insuranceform.get('email')?.dirty|| insuranceform.get('email')?.touched)" 
+        class="error">
+            <div *ngIf="insuranceform.get('email')?.errors?.['required']">
+                <small class="text-danger">Email is required</small>
+            </div>
+            <div *ngIf="insuranceform.get('email')?.errors?.['email']">
+              <small class="text-danger">Check the Email format </small>
+          </div>
+        </div>
+      </div>
+    
+        </div>
+        <br>
+    
+    
+    
+    
+      <div class="form-group">
+      <div style="text-align:center">
+      <!-- <input type="submit" value="Submit"> -->
+      <button class="btn-primary" (click)="addinsurance()">Submit</button>
+    </div>
+    </div>
+    <br>
+      
+    </div>
+    

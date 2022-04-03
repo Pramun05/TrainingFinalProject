@@ -1,0 +1,106 @@
+<form [formGroup]="renewinsuranceform"  (ngSubmit)="addrenew()"  novalidate>
+
+    <h1 style="text-align:center">RENEW INSURANCE</h1>
+    
+    
+
+       
+        <div class="form-group">
+          <div style="text-align:center">
+        <label><b>Registration Number</b></label><br>
+        <input  type="text" ng-model="registrationnumber" placeholder=" Enter Registration number" class="form-control" formControlName="registrationnumber">
+        <div *ngIf="!renewinsuranceform.get('registrationnumber')?.valid && (renewinsuranceform.get('registrationnumber')?.dirty|| renewinsuranceform.get('registrationnumber')?.touched)" 
+        class="error">
+        <div *ngIf="renewinsuranceform.get('registrationnumber')?.errors?.['pattern']">Enter valid Registration Number</div>
+        <small class="text-danger">Enter the Registration number</small>
+         </div>
+        </div>
+         </div>
+
+        <br> 
+        
+        
+         
+        
+        <div class="form-group">
+          <div style="text-align:center">
+          <label><b>Policy Number</b></label><br>
+          <input  type="text" ng-model="PolicyNumber" placeholder=" Enter PolicyNumber" class="form-control" formControlName="PolicyNumber">
+          <div *ngIf="!renewinsuranceform.get('PolicyNumber')?.valid && (renewinsuranceform.get('PolicyNumber')?.dirty|| renewinsuranceform.get('PolicyNumber')?.touched)" 
+          class="error">
+          <div *ngIf="renewinsuranceform.get('PolicyNumber')?.errors?.['required']">
+          <small class="text-danger">Enter the PolicyNumber</small>
+           </div>
+          </div>
+           </div>
+          </div><br>
+
+          <div class="form-group">
+            <div style="text-align:center">
+            <label for="email"><b>Email</b></label><br>
+            <input type="email" placeholder="Enter Email" class="form-control" formControlName="email"> 
+           <div *ngIf="!renewinsuranceform.get('email')?.valid && (renewinsuranceform.get('email')?.dirty|| renewinsuranceform.get('email')?.touched)" 
+             class="error">
+           <div *ngIf="renewinsuranceform.get('email')?.errors?.['required']">
+           <small class="text-danger">Email is required</small>
+           </div>
+           <div *ngIf="renewinsuranceform.get('email')?.errors?.['email']">
+           <small class="text-danger">Check the Email Format </small>
+           <div ></div>
+           </div>
+           
+          
+           </div>
+           </div>
+           </div><br>
+
+           <div class="form-group">
+            <div style="text-align:center">
+            <label for="mobilenumber"><b>Mobile Number</b></label><br>
+           <input type="tel" placeholder="Enter your Contact number" class="form-control" formControlName="mobilenumber">
+           <div *ngIf="!renewinsuranceform.get('mobilenumber')?.valid && (renewinsuranceform.get('mobilenumber')?.dirty|| renewinsuranceform.get('mobilenumber')?.touched)" 
+              class="error">
+          
+             <div *ngIf="renewinsuranceform.get('mobilenumber')?.errors?.['pattern']">Enter 10 digit mobilenumber</div>
+
+            
+           <small class="text-danger">Mobile number is required</small>
+           
+           </div>
+           </div>
+           </div>
+             <br>
+
+
+
+
+            
+
+             
+
+            
+
+            <div class="form-group">
+              
+              <div style="text-align:center">
+              <label><b>PaymentDate </b></label><br>
+              <input type="datetime-local" placeholder=" Enter PaymentDate" class="form-control" formControlName="PaymentDate">     
+              <div *ngIf="!renewinsuranceform.get('PaymentDate')?.valid && (renewinsuranceform.get('PaymentDate')?.dirty|| renewinsuranceform.get('PaymentDate')?.touched)" 
+                      class="error">
+              <div *ngIf="renewinsuranceform.get('PaymentDate')?.errors?.['required']">
+              <small class="text-danger">Date is required</small>
+              </div>
+              </div>
+              </div>
+              </div>
+              <br>
+
+
+             
+          
+              <div class="form-group">
+                <div style="text-align:center">
+              <button class="btn-primary"  type="button"(click)="addrenew()">Submit</button>
+              </div>
+              </div>
+              <br>

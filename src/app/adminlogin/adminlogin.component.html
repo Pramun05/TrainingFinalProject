@@ -1,0 +1,52 @@
+<form [formGroup]="adminloginform"   >
+    <div class="container">
+  
+  <h1 style="text-align:center">Admin Login</h1>
+  <br><br>
+  
+  <div class="form-group">
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" class="form-control" formControlName="Email"> 
+    
+  
+    <div *ngIf="!adminloginform.get('email')?.valid && (adminloginform.get('email')?.dirty|| adminloginform.get('email')?.touched)" 
+    class="error">
+        <div *ngIf="adminloginform.get('email')?.errors?.['required']">
+            <small class="text-danger">Email is required</small>
+        </div>
+        <div *ngIf="adminloginform.get('email')?.errors?.['email']">
+          <small class="text-danger">Check the Email format </small>
+      </div>
+    </div>
+  
+    </div>
+    <br><br>
+  
+  
+  <div class="form-group">
+    <div >
+      <label for="password"><b>Password</b></label>
+    <input  type="password" ng-model="password" placeholder=" Enter your password" class="form-control" formControlName="Password">
+    <div *ngIf="!adminloginform.get('password')?.valid && (adminloginform.get('password')?.dirty|| adminloginform.get('password')?.touched)" 
+    class="error">
+        <div *ngIf="adminloginform.get('password')?.errors?.['required']">
+            <small class="text-danger">Enter your password</small>
+        </div>
+  </div>
+  </div>
+  </div>
+  <br><br>
+  
+  <div class="form-group">
+    <div style="text-align:center">
+    
+    <button class="btn-primary" (click)="login()">Login</button>
+  </div>
+  </div>
+  
+  
+  <br>
+  </div>
+  
+  </form>
+      

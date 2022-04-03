@@ -1,0 +1,51 @@
+<form [formGroup]="policyform"  >
+    <div class="container">
+
+
+    <h1 style="text-align:center">Policy Type</h1>
+    <br><br>
+
+  <div class="form-group">
+      <div style="text-align:center">
+      <input type="number"  ng-model="ContactNo" placeholder=" Enter your mobilenumber" class="form-control" formControlName="ContactNo">
+      <div *ngIf="!policyform.get('ContactNo')?.valid && (policyform.get('ContactNo')?.dirty|| policyform.get('ContactNo')?.touched)" 
+      class="error">
+          <div *ngIf="policyform.get('ContactNo')?.errors?.['ContactNo']">
+              <small class="text-danger">Enter the mobile number</small>
+          </div>
+        </div>
+  </div>
+  </div>
+    <br><br>
+  
+  
+    <div class="form-group">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" class="form-control" formControlName="Email"> 
+      
+
+      <div *ngIf="!policyform.get('email')?.valid && (policyform.get('email')?.dirty|| policyform.get('email')?.touched)" 
+      class="error">
+          <div *ngIf="policyform.get('email')?.errors?.['required']">
+              <small class="text-danger">Email is required</small>
+          </div>
+          <div *ngIf="policyform.get('email')?.errors?.['email']">
+            <small class="text-danger">Check the Email format </small>
+        </div>
+      </div>
+
+      </div>
+      <br><br>
+  
+  
+    <div class="form-group">
+    <div style="text-align:center">
+    <button class="btn-primary" (click)="addpolicytype()">Add policy</button>
+  </div>
+  </div>
+  <br>
+    
+  </div>
+  </form>
+  
+

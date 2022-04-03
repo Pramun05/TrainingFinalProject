@@ -1,0 +1,153 @@
+<form [formGroup]="registrationform" (ngSubmit)="addcustomer()" >
+    <div class="container">
+
+        
+
+      <h1 style="text-align:center">REGISTER</h1>
+      <p style="text-align:center">Please fill in this form to create an account.</p>
+      <hr>
+  
+      <div class="form-group">
+    
+      <label><b>FirstName</b></label>
+      <input type="text" ng-model="firstname" placeholder="Enter your First Name" class="form-control" formControlName="firstname">
+      
+
+      <div *ngIf="!registrationform.get('firstname')?.valid && (registrationform.get('firstname')?.dirty|| registrationform.get('firstname')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('firstname')?.errors?.['required']">
+              <small class="text-danger">First Name is required</small>
+          </div>
+          <div *ngIf="registrationform.get('firstname')?.errors?.['minlength']">
+              <small class="text-danger"> minimum length is {{registrationform.get('firstname')?.errors?.['minlength']?.requiredLength}}</small>
+          </div>
+
+      </div>
+       </div>
+       <br><br>
+
+      <div class="form-group">
+      <label for="lastname"><b>LastName</b></label>
+      <input type="text" placeholder="Enter your Last Name" class="form-control" formControlName="lastname">
+      
+
+      <div *ngIf="!registrationform.get('lastname')?.valid && (registrationform.get('lastname')?.dirty|| registrationform.get('lastname')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('lastname')?.errors?.['required']">
+              <small class="text-danger">Last Name is required</small>
+          </div>
+        </div>
+
+        </div>
+        <br><br>
+
+      <div class="form-group">
+      <label for="address"><b>Address</b></label>
+      <input type="text" placeholder="Enter your address" class="form-control" formControlName="address">
+      
+
+      <div *ngIf="!registrationform.get('address')?.valid && (registrationform.get('address')?.dirty|| registrationform.get('address')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('address')?.errors?.['required']">
+              <small class="text-danger">Address is required</small>
+          </div>
+        </div>
+
+        </div>
+        <br><br>
+  
+      <div class="form-group">
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" class="form-control" formControlName="email"> 
+      
+
+      <div *ngIf="!registrationform.get('email')?.valid && (registrationform.get('email')?.dirty|| registrationform.get('email')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('email')?.errors?.['required']">
+              <small class="text-danger">Email is required</small>
+          </div>
+          <div *ngIf="registrationform.get('email')?.errors?.['email']">
+            <small class="text-danger">Check the Email format </small>
+        </div>
+        <div *ngIf="registrationform.get('email')?.errors?.['pattern']">
+          <small class="text-danger">Enter valid email address </small>
+      </div>
+      </div>
+
+      </div>
+      <br><br>
+
+      <div class="form-group">
+      <label for="dob"><b>Date Of Birth </b></label>
+      <input type="date" placeholder="Enter your Date Of Birth" class="form-control" formControlName="dob">
+      
+
+      <div *ngIf="!registrationform.get('dob')?.valid && (registrationform.get('dob')?.dirty|| registrationform.get('dob')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('dob')?.errors?.['required']">
+              <small class="text-danger">DOB is required</small>
+          </div>
+        </div>
+
+      </div>
+      <br><br>
+
+      <div class="form-group">
+      <label for="ContactNo"><b>Mobile Number</b></label>
+      <input type="text" placeholder="Enter your Contact number" class="form-control" formControlName="ContactNo">
+      
+
+      <div *ngIf="!registrationform.get('ContactNo')?.valid && (registrationform.get('ContactNo')?.dirty|| registrationform.get('ContactNo')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('ContactNo')?.errors?.['required']">
+              <small class="text-danger">Contact number is required</small>
+          </div>
+          <div *ngIf="registrationform.get('ContactNo')?.errors?.['pattern']">
+            <small class="text-danger">Please enter 10 digit Contact Number </small>
+        </div>
+          <!--<div *ngIf="registrationform.get('ContactNo')?.errors?.['maxlength']">
+            <small class="text-danger">  Mobile number should 10 digits {{registrationform.get('ContactNo')?.errors?.['max']?.requiredLength}}</small>
+        </div>
+        <div *ngIf="registrationform.get('ContactNo')?.errors?.['minlength']">
+          <small class="text-danger"> minimum length is {{registrationform.get('ContactNo')?.errors?.['min']?.requiredLength}}</small>
+      </div>-->
+        </div>
+
+      </div>
+      <br><br>
+
+      <div class="form-group">
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" class="form-control" formControlName="password">
+      
+
+      <div *ngIf="!registrationform.get('password')?.valid && (registrationform.get('password')?.dirty|| registrationform.get('password')?.touched)" 
+      class="error">
+          <div *ngIf="registrationform.get('password')?.errors?.['required']">
+              <small class="text-danger">Password is required</small>
+          </div>
+          
+        <div *ngIf="registrationform.get('password')?.errors?.['pattern']">
+          <small class="text-danger">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters </small>
+      </div>
+        </div>
+        
+        </div>
+
+     
+      <br><br>
+
+      
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <button type="submit"[disabled]="!registrationform.valid" class="registerbtn" (click)="addcustomer()">Register</button>
+      <br><br>
+    
+
+  
+        <div class="container signin">
+      <p>Already have an account? <button type="submit" (click)="route()" >sign in</button></p>
+       </div>
+    </div>
+</form>
+
+  

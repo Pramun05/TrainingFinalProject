@@ -1,0 +1,54 @@
+<div class="container">
+    <form [formGroup]="claimform" (ngSubmit)="addclaim()">
+
+    <h2 Style="text-align:center">Claim Your Insurance</h2> <br><br>
+
+    <div class="form-group">
+        <div style="text-align:center">
+            <label>Enter Your Policy Number</label><br>
+            <input  type="number" ng-model="PolicyNumber"  placeholder=" Enter policy number" class="form-control" formControlName="PolicyNumber">
+            <div *ngIf="!claimform.get('PolicyNumber')?.valid && (claimform.get('PolicyNumber')?.dirty|| claimform.get('PolicyNumber')?.touched)" class="error">
+        <div *ngIf="claimform.get('PolicyNumber')?.errors?.['required']">
+            <small class="text-danger">Enter valid Policy Number</small>
+        </div>
+        
+    </div>
+        </div>
+
+    </div> <br> <br>
+
+    <div class="form-group">
+        <div style="text-align:center">
+            <label>Enter Your Contact Number</label><br>
+            <input  type="number" ng-model="ContactNo"  placeholder=" Enter Contact number" class="form-control" formControlName="ContactNo">
+            <div *ngIf="!claimform.get('ContactNo')?.valid && (claimform.get('ContactNo')?.dirty|| claimform.get('ContactNo')?.touched)" class="error">
+                <div *ngIf="claimform.get('ContactNo')?.errors?.['required']">
+                    <small class="text-danger">Enter registered Contact Number</small>
+                </div>
+                
+            </div>
+        </div>
+
+    </div><br> <br>
+
+    <div  action="#">
+        <div style ="text-align:center">
+        <label for="Reason">Reason to Claim</label><br>
+        <select name="Reason to claim" id="Reason" formControlName="Reason">
+          <option value="Natural Disaster" >Natural Disaster</option>
+          <option value="Man-made Disaster">Man-made Disaster</option>
+          <option value="Theft">Theft</option>
+          <option value="Road Accident">Road Accident</option>
+        </select>
+    </div>
+    </div><br><br>
+
+    
+    
+    <button class="registerbtn" (click)="addclaim()">Claim</button> 
+    
+
+    </form>
+    
+</div>
+

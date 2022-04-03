@@ -1,0 +1,80 @@
+<div class="container">
+    <form #premiumform="ngForm" name="premiumform" [formGroup]="calculateform" (ngSubmit)="getPremium( );">
+    
+        <h2 align="center">Calculate Insurance Premium</h2><br>
+       <p align="center" style="font-weight: 400;color: red;"> Get an estimation of your insurance in minutes</p><br>
+    
+       <!--<marquee width="60%" direction="right" height="100px" style="color: red;">
+        Get an estimation of your insurance in minutes.
+        </marquee>-->
+    
+    
+        <div class="form-group">
+                <label><b>Car/Model</b></label>
+            <input type="text" ng-model="car" placeholder="Manufactor and Model" class="form-control" formControlName="car">
+    
+            <div *ngIf="!calculateform.get('car')?.valid && (calculateform.get('car')?.dirty|| calculateform.get('car')?.touched)" 
+            class="error">
+                <div *ngIf="calculateform.get('car')?.errors?.['required']">
+                    <small class="text-danger"> Carname is required</small>
+                </div>
+            </div>
+             </div>
+             <br><br>
+    
+    
+    
+             <div class="form-group">
+                <label for=""><b>Select your fuel type</b></label>
+                <select name="fuel" id="fuel" formControlName="fuel">
+                  
+                  <option value="petrol">Petrol</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="cng">CNG(Compressed Natural Gas)</option>
+                </select>
+            </div>
+            <br><br>
+    
+    
+    
+            <div class="form-group">
+                <label><b>Registration Year</b></label>
+            <input type="number" ng-model="year" placeholder="Year of Registration" class="form-control" formControlName="year">
+    
+            <div *ngIf="!calculateform.get('year')?.valid && (calculateform.get('year')?.dirty|| calculateform.get('year')?.touched)" 
+            class="error">
+                <div *ngIf="calculateform.get('year')?.errors?.['required']">
+                    <small class="text-danger"> Registration year is required</small>
+                </div>
+            </div>
+             </div>
+             <br><br>
+    
+    
+    
+    
+             <div class="form-group">
+                <label><b>Price</b></label>
+            <input type="number" ng-model="price" placeholder="Enter the price" class="form-control" formControlName="price">
+    
+            <div *ngIf="!calculateform.get('price')?.valid && (calculateform.get('price')?.dirty|| calculateform.get('price')?.touched)" 
+            class="error">
+                <div *ngIf="calculateform.get('price')?.errors?.['required']">
+                    <small class="text-danger"> Price is required</small>
+                </div>
+            </div>
+             </div>
+             <br><br>
+    
+             <div class="form-group">
+                <div style="text-align:center">
+                <button class="registerbtn">Calculate</button>
+              </div>
+              </div>
+              <br>
+            <h3 style="font: size 30px;"> Your premium is ₹ {{premium}} yearly</h3>
+    
+        </form>
+    </div>
+     
+    

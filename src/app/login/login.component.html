@@ -1,0 +1,15 @@
+<form  #loginform="ngForm">
+    <p>
+      Enter Email
+        <input type="text" name="email" [(ngModel)]=emp.Email #email=ngModel/>
+    </p>
+    <p>
+        Enter Password
+          <input type="password" name="password" [(ngModel)]=emp.Password #password=ngModel/>
+      </p>
+      <p>
+     
+      <p><button class="btn-primary" (click)="doLogin()">Login</button></p>
+
+     <h3><span>{{err}}</span></h3>
+</form>

@@ -1,0 +1,51 @@
+<form [formGroup]="planform" (ngSubmit)="addplan()" >
+    <div class="container">
+
+        
+
+      <h1>Plans</h1>
+     
+      <hr>
+  
+      <div class="form-group">
+        <label for="PlanType"><b>Choose your Plan</b></label>
+        <select name="PlanType" id="PlanType" formControlName="PlanType">
+          
+          <option value="Third Party Liability">Third Party Liability</option>
+          <option value="Comprehensive">Comprehensive</option>
+        </select>
+    </div>
+    <br>
+        
+  
+        
+        <br><br>
+
+        <div class="form-group">
+            <label for="PlanDuration"><b>Number of Years</b></label>
+            <select name="PlanDuration" id="PlanDuration" formControlName="PlanDuration">
+              
+              <option value="One Year">One Year</option>
+              <option value="Two Year">Two Year</option>
+              <option value="Three Year">Three Year</option>
+            </select>
+        </div>
+        <br>
+            
+      
+        
+        
+        <br><br>
+  
+
+            <div class="form-group">
+                <div style="text-align:center">
+                <button class="btn-primary" >Submit</button>
+              </div>
+              </div>
+              <br><br>
+
+            </div>
+
+</form>
+
